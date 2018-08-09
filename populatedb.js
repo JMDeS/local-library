@@ -107,29 +107,29 @@ function bookInstanceCreate(book, imprint, due_back, status, cb) {
 function createGenreAuthors(cb) {
     async.parallel([
         function(callback) {
-          authorCreate('Patrick', 'Rothfuss', '1973-06-06', false, callback);
+          authorCreate('Patrick', 'Rothfuss', '1973-06-06', false, callback)
         },
         function(callback) {
-          authorCreate('Ben', 'Bova', '1932-11-8', false, callback);
+          authorCreate('Ben', 'Bova', '1932-11-8', false, callback)
         },
         function(callback) {
-          authorCreate('Isaac', 'Asimov', '1920-01-02', '1992-04-06', callback);
+          authorCreate('Isaac', 'Asimov', '1920-01-02', '1992-04-06', callback)
         },
         function(callback) {
-          authorCreate('Bob', 'Billings', false, false, callback);
+          authorCreate('Bob', 'Billings', false, false, callback)
         },
         function(callback) {
-          authorCreate('Jim', 'Jones', '1971-12-16', false, callback);
+          authorCreate('Jim', 'Jones', '1971-12-16', false, callback)
         },
         function(callback) {
-          genreCreate("Fantasy", callback);
+          genreCreate("Fantasy", callback)
         },
         function(callback) {
-          genreCreate("Science Fiction", callback);
+          genreCreate("Science Fiction", callback)
         },
         function(callback) {
-          genreCreate("French Poetry", callback);
-        },
+          genreCreate("French Poetry", callback)
+        }
         ],
         // optional callback
         cb);
@@ -221,6 +221,7 @@ function(err, results) {
         console.log('BOOKInstances: '+bookinstances);
         
     }
+    console.log(results);
     // All done, disconnect from database
     mongoose.connection.close();
 });

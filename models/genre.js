@@ -5,17 +5,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var GenreSchema = new Schema(
-    {
-        name: {type: String, max: 100}
-    }
+  {
+    name: { type: String, required: true, max: 100 },
+  }
 );
-
-// // Virtual for genre's name
-// GenreSchema
-// .virtual('name')
-// .get(function () {
-//     return this.name;
-// });
 
 // Virtual for genre's URL
 GenreSchema
@@ -25,4 +18,4 @@ GenreSchema
 });
 
 //Export model
-module.export = mongoose.model('Genre', GenreSchema);
+module.exports = mongoose.model('Genre', GenreSchema);
